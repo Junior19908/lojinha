@@ -1,0 +1,21 @@
+{
+    "name": "junio/lojinha",
+    "description": "Loja",
+    "type": "project",
+    "license": "Proprietary License",
+    "autoload": {
+        "psr-4": {
+            "Junio\\Lojinha\\": "src/",
+            "Junio\\Admin\\": "admin/",
+            "Junio\\Api\\": "api/",
+            "Junio\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Carlos Júnior"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

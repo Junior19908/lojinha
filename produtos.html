@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <style>
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color: #fff;
+            border: 1px solid #fff;
+
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        button {
+            border-radius: 5px;
+            height: 25px;
+            border: 1px solid silver;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .limite-atingido td:nth-last-child(2) {
+            background-color: #ffcccc;
+        }
+
+        .limite-n-atingido td:nth-last-child(2) {
+            background-color: greenyellow;
+        }
+
+        /* Alinhar células à direita */
+        td:nth-last-child(-n+2) {
+            text-align: right;
+        }
+
+        .logo-container {
+            text-align: center;
+            /* Centraliza o conteúdo */
+            margin-bottom: 20px;
+            /* Espaço inferior */
+            margin-top: 10px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #282829;
+        }
+
+        /* Esconde as colunas que não são necessárias em dispositivos móveis */
+        @media only screen and (max-width: 600px) {
+
+            th:nth-child(1),
+            td:nth-child(1),
+            th:nth-child(3),
+            td:nth-child(3),
+            th:nth-child(4),
+            td:nth-child(4),
+            th:nth-child(5),
+            td:nth-child(5),
+            th:nth-child(6),
+            td:nth-child(6),
+            th:nth-child(8),
+            td:nth-child(8) {
+                display: none;
+            }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Product Details */
+        .product-details {
+            text-align: left;
+        }
+
+        .detail-item {
+            margin-bottom: 10px;
+        }
+
+        .detail-item strong {
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* Hover Effect */
+        .detail-item:hover {
+            background-color: #f4f4f4;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#productBody tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="logo-container">
+        <!-- Logo -->
+        <img src="https://i.ibb.co/0cYqBY5/Lidy-Bijoux-PNG-02.png" alt="Lidy-Bijoux-PNG-02" width="300px" border="0">
+    </div>
+    <div class="input-group input-group-sm">
+        <input id="myInput" class="form-control form-control-navbar" type="search" placeholder="Search"
+            aria-label="Search">
+    </div>
+    <h2>Produtos</h2>
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>Categoria</th><!--0-->
+                <th>Nome</th><!--1-->
+                <th>Preço Unitário</th><!--2-->
+                <th>Disponível</th><!--3-->
+                <th>Número de Venda</th><!--4-->
+                <th>Quantidade Limite</th><!--5-->
+                <th>Quantidade em Estoque</th><!--6-->
+                <th>Quantidade Vendida</th><!--7-->
+                <th>Estoque</th><!--8-->
+                <th>Preço Total</th> <!--10-->
+                <th>Data do Movimento</th> <!--11-->
+            </tr>
+        </thead>
+        <tbody id="productBody">
+        </tbody>
+        <tfoot id="productFoot">
+            <tr>
+                <td colspan="8"><strong>
+                        <center>Total Geral</center>
+                    </strong></td>
+                <td id="totalVendido"></td>
+                <td id="totalVendas"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <!-- Modal para exibir os detalhes do produto -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalContent" class="product-details">
+                <h3>Detalhes do Produto</h3>
+                <hr>
+                <div class="detail-item">
+                    <strong>ID Firebase:</strong> <input type="text" id="productidInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Nome:</strong> <input type="text" id="productNameInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Preço Unitário:</strong> <input type="number" id="productPriceInput" step="0.01">
+                </div>
+                <div class="detail-item">
+                    <strong>Disponível:</strong> <input type="checkbox" id="productAvailabilityInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Número de Venda:</strong> <input type="number" id="productSalesNumberInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Quantidade Limite:</strong> <input type="number" id="productLimitInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Quantidade em Estoque:</strong> <input type="number" id="productStockInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Quantidade Vendida:</strong> <input type="number" id="productSoldInput">
+                </div>
+                <div class="detail-item">
+                    <strong>Data do Movimento:</strong> <input type="text" id="productMovementDateInput">
+                </div>
+                <button id="saveChangesButton">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+        import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC5Dwh7tAz1tauHZYaoq-wzEJ6C_Ua71gg",
+            authDomain: "lojinha-ab0db.firebaseapp.com",
+            projectId: "lojinha-ab0db",
+            storageBucket: "lojinha-ab0db.appspot.com",
+            messagingSenderId: "618098229854",
+            appId: "1:618098229854:web:95473402213d6ae7266acf",
+            measurementId: "G-5X5XYXBZ26"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function updateTable() {
+            const querySnapshot = await getDocs(collection(db, "produtos"));
+            const tableBody = document.getElementById("productTable").getElementsByTagName("tbody")[0];
+            tableBody.innerHTML = ""; // Limpa o corpo da tabela antes de preenchê-lo novamente
+
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const { categoria, descProduto, precoUn, disponivel, numVenda, qtdLimite, qtdProduto, qtdVenda, dataMovimento } = data;
+                const row = createTableRow(categoria, descProduto, precoUn, disponivel, numVenda, qtdLimite, qtdProduto, qtdVenda, dataMovimento);
+                tableBody.appendChild(row);
+            });
+        }
+
+        function createTableRow(categoria, nome, precoUn, disponivel, numVenda, qtdLimite, qtdProduto, qtdVenda, dataMovimento) {
+            // Cria uma nova linha da tabela com os dados fornecidos
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${categoria}</td>
+                <td>${nome}</td>
+                <td style='text-align: right'>R$ ${precoUn.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                <td><center>${disponivel ? 'Sim' : 'Não'}</td>
+                <td><center>${numVenda}</td>
+                <td><center>${qtdLimite}</td>
+                <td><center>${qtdProduto}</td>
+                <td><center>${qtdVenda}</td>
+                <td><center>${qtdLimite < qtdProduto ? 'Limite Atingido' : 'Estoque OK'}</td>
+                <td>R$ ${(precoUn * qtdVenda).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                <td><center>${dataMovimento}</td>
+            `;
+            return row;
+        }
+        function showProductDetails(productId, nome, precoUn, disponivel, numVenda, qtdLimite, qtdProduto, qtdVenda, dataMovimento) {
+            // Preencher campos de entrada com os detalhes do produto
+            //const productRef = doc(collection(db, 'produtos'), productId); // Referencie o documento pelo ID na coleção 'produtos'
+
+            //console.dir(productRef);
+
+            document.getElementById("productidInput").value = productId;
+            document.getElementById("productNameInput").value = nome;
+            document.getElementById("productPriceInput").value = precoUn;
+            document.getElementById("productAvailabilityInput").checked = disponivel;
+            document.getElementById("productSalesNumberInput").value = numVenda;
+            document.getElementById("productLimitInput").value = qtdLimite;
+            document.getElementById("productStockInput").value = qtdProduto;
+            document.getElementById("productSoldInput").value = qtdVenda;
+            document.getElementById("productMovementDateInput").value = dataMovimento;
+
+            document.getElementById("myModal").style.display = "block";
+
+            const span = document.getElementsByClassName("close")[0];
+
+            span.onclick = function () {
+                document.getElementById("myModal").style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == document.getElementById("myModal")) {
+                    document.getElementById("myModal").style.display = "none";
+                }
+            }
+
+
+            // Adicionar evento de clique para o botão "Salvar Alterações"
+            document.getElementById("saveChangesButton").onclick = function () {
+                const productId = document.getElementById("productidInput").value;
+                console.dir(productId);
+                // Obter os valores dos campos de entrada
+                const newName = document.getElementById("productNameInput").value;
+                const newPrice = parseFloat(document.getElementById("productPriceInput").value);
+                const newAvailability = document.getElementById("productAvailabilityInput").checked;
+                const newSalesNumber = parseInt(document.getElementById("productSalesNumberInput").value);
+                const newLimit = parseInt(document.getElementById("productLimitInput").value);
+                const newStock = parseInt(document.getElementById("productStockInput").value);
+                const newSold = parseInt(document.getElementById("productSoldInput").value);
+                const newMovementDate = document.getElementById("productMovementDateInput").value;
+
+                // Referência ao documento do produto no Firestore
+                //const productRef = doc(collection(db, 'produtos'), productId); // Referencie o documento pelo ID na coleção 'produtos'
+                const productRef = doc(collection(db, 'produtos'), productId);
+
+                // Objeto contendo os campos e valores que deseja atualizar
+                const dataToUpdate = {
+                    descProduto: newName,
+                    precoUn: newPrice,
+                    disponivel: newAvailability,
+                    numVenda: newSalesNumber,
+                    qtdLimite: newLimit,
+                    qtdProduto: newStock,
+                    qtdVenda: newSold,
+                    dataMovimento: newMovementDate
+                };
+
+                // Atualize os dados do produto no Firestore
+                updateDoc(productRef, dataToUpdate)
+                    .then(() => {
+                        // Dados atualizados com sucesso
+                        alert("Dados atualizados com sucesso!");
+                        // Fechar o modal após salvar as alterações
+                        document.getElementById("myModal").style.display = "none";
+                    })
+                    .catch(error => {
+                        console.dir(error);
+                        // Erro ao atualizar os dados
+                        alert("Erro ao atualizar os dados:", error);
+
+                    });
+            }
+        }
+
+        updateTable(); // Chamada inicial para preencher a tabela
+    </script>
+</body>
+
+</html>

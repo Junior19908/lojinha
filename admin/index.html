@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/admin.css">
+    <title>Sidebar</title>
+</head>
+
+<body onload="entrarModoTelaCheia()">
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="https://i.ibb.co/P6X6Hjk/1080x1080-02.png" id="user_avatar" alt="Avatar">
+
+                <p id="user_infos">
+                    <span class="item-description">
+                        Lidy Bijoux
+                    </span>
+                    <span class="item-description">
+                        Administrativo
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Usuários
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Produtos
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-image"></i>
+                        <span class="item-description">
+                            Imagens
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container">
+            <div class="vendas-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Vendas no Dia -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>R$ 1000</h3>
+                            <p>Vendas no Dia</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vendas-ontem-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Vendas de Ontem -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>R$ 900</h3>
+                            <p>Vendas de Ontem</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dinheiro-caixa-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Dinheiro em Caixa -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>R$ 5000</h3>
+                            <p>Dinheiro em Caixa</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="itens-loja-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Itens da Loja -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>100</h3>
+                            <p>Itens da Loja</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"
+        integrity="sha512-+JzzvMMjA6f5BgDUGxD7RnR3eO5pyhM1aTt5eRLOFXYgTxZgHxz8IajwQ/HFci0dUeRV0JN9V0yxPQXeBwzKJw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        function entrarModoTelaCheia() {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+    </script>
+</body>
+
+</html>
