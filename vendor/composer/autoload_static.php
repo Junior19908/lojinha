@@ -9,14 +9,34 @@ class ComposerStaticInit789b429c8fe0fea9a375474cb859d36b
     public static $prefixLengthsPsr4 = array (
         'J' => 
         array (
+            'Junio\\db\\' => 9,
+            'Junio\\Tests\\' => 12,
             'Junio\\Lojinha\\' => 14,
+            'Junio\\Api\\' => 10,
+            'Junio\\Admin\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Junio\\db\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/db/connection.php',
+        ),
+        'Junio\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests',
+        ),
         'Junio\\Lojinha\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'Junio\\Api\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/api',
+        ),
+        'Junio\\Admin\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/admin',
         ),
     );
 

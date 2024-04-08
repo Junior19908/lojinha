@@ -8,7 +8,8 @@
             "Junio\\Lojinha\\": "src/",
             "Junio\\Admin\\": "admin/",
             "Junio\\Api\\": "api/",
-            "Junio\\Tests\\": "tests/"
+            "Junio\\Tests\\": "tests/",
+            "Junio\\Db\\":"db/connection.php"
         }
     },
     "authors": [

@@ -6,5 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Junio\\db\\' => array($baseDir . '/db/connection.php'),
+    'Junio\\Tests\\' => array($baseDir . '/tests'),
     'Junio\\Lojinha\\' => array($baseDir . '/src'),
+    'Junio\\Api\\' => array($baseDir . '/api'),
+    'Junio\\Admin\\' => array($baseDir . '/admin'),
 );

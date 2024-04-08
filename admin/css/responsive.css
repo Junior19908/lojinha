@@ -6,7 +6,11 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
+.cadastro-produto-h1{
+    color: white;
+    background-color: #282829;
+    border-radius: 10px;
+}
 body {
     display: flex;
     background-color: #282829;
@@ -349,4 +353,10 @@ h1 {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+/* Regras de estilo para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+    .container-produto {
+        margin-left: 0; /* Redefina a margem para se ajustar melhor em telas menores */
+    }
 }

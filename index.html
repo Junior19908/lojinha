@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anon - eCommerce Website</title>
+    <title>Lidy Bijoux</title>
 
     <!--
     - favicon
@@ -36,45 +36,7 @@
     - MODAL
   -->
 
-    <div class="modal" data-modal>
 
-        <div class="modal-close-overlay" data-modal-overlay></div>
-
-        <div class="modal-content">
-
-            <button class="modal-close-btn" data-modal-close>
-                <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="newsletter-img">
-                <img src="./src/img/newsletter.png" alt="subscribe newsletter" width="400" height="400">
-            </div>
-
-            <div class="newsletter">
-
-                <form action="#">
-
-                    <div class="newsletter-header">
-
-                        <h3 class="newsletter-title">Subscribe Newsletter.</h3>
-
-                        <p class="newsletter-desc">
-                            Subscribe the <b>Anon</b> to get latest products and discount update.
-                        </p>
-
-                    </div>
-
-                    <input type="email" name="email" class="email-field" placeholder="Email Address" required>
-
-                    <button type="submit" class="btn-newsletter">Subscribe</button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </div>
 
 
 
@@ -97,15 +59,15 @@
         <div class="toast-detail">
 
             <p class="toast-message">
-                Someone in new just bought
+                Alguém acabou de comprar
             </p>
 
             <p class="toast-title">
-                Rose Gold Earrings
+                Brincos de ouro rosa
             </p>
 
             <p class="toast-meta">
-                <time datetime="PT2M">2 Minutes</time> ago
+                <time datetime="PT2M">2 Minutos</time> atrás
             </p>
 
         </div>
@@ -156,8 +118,8 @@
 
                 <div class="header-alert-news">
                     <p>
-                        <b>Free Shipping</b>
-                        This Week Order Over - $55
+                        <b>Frete grátis</b>
+                        Esta semana para pedidos acima de - R$ 110,00
                     </p>
                 </div>
 
@@ -165,6 +127,7 @@
 
                     <select name="currency">
 
+                        <option value="brl">BRL (R$)</option>
                         <option value="usd">USD &dollar;</option>
                         <option value="eur">EUR &euro;</option>
 
@@ -172,6 +135,7 @@
 
                     <select name="language">
 
+                        <option value="pt-BR">Português</option>
                         <option value="en-US">English</option>
                         <option value="es-ES">Espa&ntilde;ol</option>
                         <option value="fr">Fran&ccedil;ais</option>
@@ -189,12 +153,13 @@
             <div class="container">
 
                 <a href="#" class="header-logo">
-                    <img src="./src/img/logo/logo.svg" alt="Anon's logo" width="120" height="36">
+                    <img src="./src/img/Lidy Bijoux PNG 06 Sem fundo.png" alt="Lidy-Bijoux-PNG-07-Sem-fundo" width="120"
+                        height="70">
                 </a>
 
                 <div class="header-search-container">
 
-                    <input type="search" name="search" class="search-field" placeholder="Enter your product name...">
+                    <input type="search" name="search" class="search-field" placeholder="Busque o seu produto...">
 
                     <button class="search-btn">
                         <ion-icon name="search-outline"></ion-icon>
@@ -203,11 +168,11 @@
                 </div>
 
                 <div class="header-user-actions">
-
-                    <button class="action-btn">
-                        <ion-icon name="person-outline"></ion-icon>
-                    </button>
-
+                    <a href="./admin/">
+                        <button class="action-btn">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </button>
+                    </a>
                     <button class="action-btn">
                         <ion-icon name="heart-outline"></ion-icon>
                         <span class="count">0</span>
@@ -235,14 +200,14 @@
                     </li>
 
                     <li class="menu-category">
-                        <a href="#" class="menu-title">Categories</a>
+                        <a href="#" class="menu-title">Categorias</a>
 
                         <div class="dropdown-panel">
 
                             <ul class="dropdown-panel-list">
 
                                 <li class="menu-title">
-                                    <a href="#">Electronics</a>
+                                    <a href="#">Eletrônicos</a>
                                 </li>
 
                                 <li class="panel-list-item">
@@ -254,7 +219,7 @@
                                 </li>
 
                                 <li class="panel-list-item">
-                                    <a href="#">Camera</a>
+                                    <a href="#">Câmera</a>
                                 </li>
 
                                 <li class="panel-list-item">
@@ -262,7 +227,7 @@
                                 </li>
 
                                 <li class="panel-list-item">
-                                    <a href="#">Headphone</a>
+                                    <a href="#">Fone de Ouvido</a>
                                 </li>
 
                                 <li class="panel-list-item">
@@ -277,7 +242,7 @@
                             <ul class="dropdown-panel-list">
 
                                 <li class="menu-title">
-                                    <a href="#">Men's</a>
+                                    <a href="#">Homens</a>
                                 </li>
 
                                 <li class="panel-list-item">
@@ -312,7 +277,7 @@
                             <ul class="dropdown-panel-list">
 
                                 <li class="menu-title">
-                                    <a href="#">Women's</a>
+                                    <a href="#">Mulher</a>
                                 </li>
 
                                 <li class="panel-list-item">
@@ -383,7 +348,7 @@
                     </li>
 
                     <li class="menu-category">
-                        <a href="#" class="menu-title">Men's</a>
+                        <a href="#" class="menu-title">Homens</a>
 
                         <ul class="dropdown-list">
 
@@ -407,7 +372,7 @@
                     </li>
 
                     <li class="menu-category">
-                        <a href="#" class="menu-title">Women's</a>
+                        <a href="#" class="menu-title">Mulher</a>
 
                         <ul class="dropdown-list">
 
@@ -431,7 +396,7 @@
                     </li>
 
                     <li class="menu-category">
-                        <a href="#" class="menu-title">Jewelry</a>
+                        <a href="#" class="menu-title">Joias</a>
 
                         <ul class="dropdown-list">
 
@@ -483,7 +448,7 @@
                     </li>
 
                     <li class="menu-category">
-                        <a href="#" class="menu-title">Hot Offers</a>
+                        <a href="#" class="menu-title">Ofertas Quentes</a>
                     </li>
 
                 </ul>
@@ -539,7 +504,7 @@
                 <li class="menu-category">
 
                     <button class="accordion-menu" data-accordion-btn>
-                        <p class="menu-title">Men's</p>
+                        <p class="menu-title">Homens</p>
 
                         <div>
                             <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -572,7 +537,7 @@
                 <li class="menu-category">
 
                     <button class="accordion-menu" data-accordion-btn>
-                        <p class="menu-title">Women's</p>
+                        <p class="menu-title">Mulher</p>
 
                         <div>
                             <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -605,7 +570,7 @@
                 <li class="menu-category">
 
                     <button class="accordion-menu" data-accordion-btn>
-                        <p class="menu-title">Jewelry</p>
+                        <p class="menu-title">Joias</p>
 
                         <div>
                             <ion-icon name="add-outline" class="add-icon"></ion-icon>
@@ -673,7 +638,7 @@
                 </li>
 
                 <li class="menu-category">
-                    <a href="#" class="menu-title">Hot Offers</a>
+                    <a href="#" class="menu-title">Ofertas Quentes</a>
                 </li>
 
             </ul>
@@ -787,15 +752,15 @@
 
                         <div class="banner-content">
 
-                            <p class="banner-subtitle">Trending item</p>
+                            <p class="banner-subtitle">Item em Alta</p>
 
-                            <h2 class="banner-title">Women's latest fashion sale</h2>
+                            <h2 class="banner-title">Promoção de Moda Feminina</h2>
 
                             <p class="banner-text">
-                                starting at &dollar; <b>20</b>.00
+                                a partir de R$ <b>20</b>,00
                             </p>
 
-                            <a href="#" class="banner-btn">Shop now</a>
+                            <a href="#" class="banner-btn">Compre Agora</a>
 
                         </div>
 
@@ -807,15 +772,15 @@
 
                         <div class="banner-content">
 
-                            <p class="banner-subtitle">Trending accessories</p>
+                            <p class="banner-subtitle">Acessórios em Alta</p>
 
-                            <h2 class="banner-title">Modern sunglasses</h2>
+                            <h2 class="banner-title">Óculos de sol modernos</h2>
 
                             <p class="banner-text">
-                                starting at &dollar; <b>15</b>.00
+                                a partir de R$ <b>50</b>,00
                             </p>
 
-                            <a href="#" class="banner-btn">Shop now</a>
+                            <a href="#" class="banner-btn">Compre Agora</a>
 
                         </div>
 
@@ -827,15 +792,15 @@
 
                         <div class="banner-content">
 
-                            <p class="banner-subtitle">Sale Offer</p>
+                            <p class="banner-subtitle">Ofertas do Dia</p>
 
-                            <h2 class="banner-title">New fashion summer sale</h2>
+                            <h2 class="banner-title">Nova promoção de moda para o verão</h2>
 
                             <p class="banner-text">
-                                starting at &dollar; <b>29</b>.99
+                                a partir de R$ <b>50</b>,00
                             </p>
 
-                            <a href="#" class="banner-btn">Shop now</a>
+                            <a href="#" class="banner-btn">Compre Agora</a>
 
                         </div>
 
@@ -1046,368 +1011,11 @@
 
                 <div class="sidebar  has-scrollbar" data-mobile-menu>
 
-                    <div class="sidebar-category">
 
-                        <div class="sidebar-top">
-                            <h2 class="sidebar-title">Category</h2>
-
-                            <button class="sidebar-close-btn" data-mobile-menu-close-btn>
-                                <ion-icon name="close-outline"></ion-icon>
-                            </button>
-                        </div>
-
-                        <ul class="sidebar-menu-category-list">
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/dress.svg" alt="clothes" width="20" height="20"
-                                            class="menu-title-img">
-
-                                        <p class="menu-title">Clothes</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Shirt</p>
-                                            <data value="300" class="stock" title="Available Stock">300</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">shorts & jeans</p>
-                                            <data value="60" class="stock" title="Available Stock">60</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">jacket</p>
-                                            <data value="50" class="stock" title="Available Stock">50</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">dress & frock</p>
-                                            <data value="87" class="stock" title="Available Stock">87</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/shoes.svg" alt="footwear" class="menu-title-img"
-                                            width="20" height="20">
-
-                                        <p class="menu-title">Footwear</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Sports</p>
-                                            <data value="45" class="stock" title="Available Stock">45</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Formal</p>
-                                            <data value="75" class="stock" title="Available Stock">75</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Casual</p>
-                                            <data value="35" class="stock" title="Available Stock">35</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Safety Shoes</p>
-                                            <data value="26" class="stock" title="Available Stock">26</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/jewelry.svg" alt="clothes" class="menu-title-img"
-                                            width="20" height="20">
-
-                                        <p class="menu-title">Jewelry</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Earrings</p>
-                                            <data value="46" class="stock" title="Available Stock">46</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Couple Rings</p>
-                                            <data value="73" class="stock" title="Available Stock">73</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Necklace</p>
-                                            <data value="61" class="stock" title="Available Stock">61</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/perfume.svg" alt="perfume" class="menu-title-img"
-                                            width="20" height="20">
-
-                                        <p class="menu-title">Perfume</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Clothes Perfume</p>
-                                            <data value="12" class="stock" title="Available Stock">12 pcs</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Deodorant</p>
-                                            <data value="60" class="stock" title="Available Stock">60 pcs</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">jacket</p>
-                                            <data value="50" class="stock" title="Available Stock">50 pcs</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">dress & frock</p>
-                                            <data value="87" class="stock" title="Available Stock">87 pcs</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/cosmetics.svg" alt="cosmetics" class="menu-title-img"
-                                            width="20" height="20">
-
-                                        <p class="menu-title">Cosmetics</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Shampoo</p>
-                                            <data value="68" class="stock" title="Available Stock">68</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Sunscreen</p>
-                                            <data value="46" class="stock" title="Available Stock">46</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Body Wash</p>
-                                            <data value="79" class="stock" title="Available Stock">79</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Makeup Kit</p>
-                                            <data value="23" class="stock" title="Available Stock">23</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/glasses.svg" alt="glasses" class="menu-title-img"
-                                            width="20" height="20">
-
-                                        <p class="menu-title">Glasses</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Sunglasses</p>
-                                            <data value="50" class="stock" title="Available Stock">50</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Lenses</p>
-                                            <data value="48" class="stock" title="Available Stock">48</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                            <li class="sidebar-menu-category">
-
-                                <button class="sidebar-accordion-menu" data-accordion-btn>
-
-                                    <div class="menu-title-flex">
-                                        <img src="./src/img/icons/bag.svg" alt="bags" class="menu-title-img" width="20"
-                                            height="20">
-
-                                        <p class="menu-title">Bags</p>
-                                    </div>
-
-                                    <div>
-                                        <ion-icon name="add-outline" class="add-icon"></ion-icon>
-                                        <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
-                                    </div>
-
-                                </button>
-
-                                <ul class="sidebar-submenu-category-list" data-accordion>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Shopping Bag</p>
-                                            <data value="62" class="stock" title="Available Stock">62</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Gym Backpack</p>
-                                            <data value="35" class="stock" title="Available Stock">35</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Purse</p>
-                                            <data value="80" class="stock" title="Available Stock">80</data>
-                                        </a>
-                                    </li>
-
-                                    <li class="sidebar-submenu-category">
-                                        <a href="#" class="sidebar-submenu-title">
-                                            <p class="product-name">Wallet</p>
-                                            <data value="75" class="stock" title="Available Stock">75</data>
-                                        </a>
-                                    </li>
-
-                                </ul>
-
-                            </li>
-
-                        </ul>
-
-                    </div>
 
                     <div class="product-showcase">
 
-                        <h3 class="showcase-heading">best sellers</h3>
+                        <h3 class="showcase-heading">mais vendidos na semana</h3>
 
                         <div class="showcase-wrapper">
 
@@ -1550,7 +1158,7 @@
 
                         <div class="product-showcase">
 
-                            <h2 class="title">New Arrivals</h2>
+                            <h2 class="title">Lançamentos</h2>
 
                             <div class="showcase-wrapper has-scrollbar">
 
@@ -1761,7 +1369,7 @@
 
                         <div class="product-showcase">
 
-                            <h2 class="title">Trending</h2>
+                            <h2 class="title">Mais Vendidos</h2>
 
                             <div class="showcase-wrapper  has-scrollbar">
 
@@ -1971,7 +1579,7 @@
 
                         <div class="product-showcase">
 
-                            <h2 class="title">Top Rated</h2>
+                            <h2 class="title">Mais Avaliados</h2>
 
                             <div class="showcase-wrapper  has-scrollbar">
 
@@ -2189,7 +1797,7 @@
 
                     <div class="product-featured">
 
-                        <h2 class="title">Deal of the day</h2>
+                        <h2 class="title">Promoção do Dia</h2>
 
                         <div class="showcase-wrapper has-scrollbar">
 
@@ -2375,7 +1983,7 @@
 
                     <div class="product-main">
 
-                        <h2 class="title">New Products</h2>
+                        <h2 class="title">Lançamentos</h2>
 
                         <div class="product-grid">
 
@@ -2445,7 +2053,7 @@
                                     <img src="./src/img/products/shirt-2.jpg" alt="Pure Garment Dyed Cotton Shirt"
                                         class="product-img hover" width="300">
 
-                                    <p class="showcase-badge angle black">sale</p>
+                                    <p class="showcase-badge angle black">esgotado</p>
 
                                     <div class="showcase-actions">
                                         <button class="btn-action">
@@ -2549,7 +2157,7 @@
                                     <img src="./src/img/products/clothes-4.jpg" alt="Black Floral Wrap Midi Skirt"
                                         class="product-img hover" width="300">
 
-                                    <p class="showcase-badge angle pink">new</p>
+                                    <p class="showcase-badge angle pink">Novo</p>
 
                                     <div class="showcase-actions">
                                         <button class="btn-action">
@@ -2653,7 +2261,7 @@
                                     <img src="./src/img/products/watch-4.jpg" alt="Pocket Watch Leather Pouch"
                                         class="product-img hover" width="300">
 
-                                    <p class="showcase-badge angle black">sale</p>
+                                    <p class="showcase-badge angle black">esgotado</p>
 
                                     <div class="showcase-actions">
                                         <button class="btn-action">
@@ -2757,7 +2365,7 @@
                                     <img src="./src/img/products/party-wear-2.jpg" alt="Womens Party Wear Shoes"
                                         class="product-img hover" width="300">
 
-                                    <p class="showcase-badge angle black">sale</p>
+                                    <p class="showcase-badge angle black">esgotado</p>
 
                                     <div class="showcase-actions">
                                         <button class="btn-action">
@@ -2861,7 +2469,7 @@
                                     <img src="./src/img/products/sports-4.jpg" alt="Trekking & Running Shoes - black"
                                         class="product-img hover" width="300">
 
-                                    <p class="showcase-badge angle black">sale</p>
+                                    <p class="showcase-badge angle black">esgotado</p>
 
                                     <div class="showcase-actions">
                                         <button class="btn-action">
@@ -2967,7 +2575,7 @@
                                         alt="Better Basics French Terry Sweatshorts" class="product-img hover"
                                         width="300">
 
-                                    <p class="showcase-badge angle black">sale</p>
+                                    <p class="showcase-badge angle black">esgotado</p>
 
                                     <div class="showcase-actions">
                                         <button class="btn-action">
