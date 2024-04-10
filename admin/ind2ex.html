@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/admin.css">
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                locale: 'pt-br'
+            });
+            calendar.render();
+        });
+
+
+    </script>
+    <style>
+        table{
+            border: 1px solid white;
+            border-radius: 10px;
+            width: 100%;
+        }
+        .modal-title{
+            color: white;
+            background-color: #282829;
+            border: 1px solid white;
+            border-radius: 10px;
+        }
+        .modal-tabela{
+            background-color: #f4e17a;
+            border-radius: 10px;
+        }
+        .modal-tabela-evento{
+            background-color: #f4e17a;
+            border-radius: 10px;
+        }
+        /* Estilos para o modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+            background-color: #b6853d;
+            margin: 30% auto;
+            left: 1%;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 25px;
+            width: 100%;
+            /* Ajustar a largura para ocupar mais da largura da tela */
+            max-width: 50%;
+            /* Definir uma largura máxima para evitar que o modal fique muito largo em telas grandes */
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            animation-name: modalopen;
+            animation-duration: 0.4s;
+        }
+        @keyframes modalopen {
+            from {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+        .close {
+            color: #aaa;
+            font-size: 24px;
+            /* Reduzir o tamanho do botão de fechar */
+            top: 10px;
+            /* Ajustar a posição vertical para alinhamento */
+            right: 10px;
+            /* Ajustar a posição horizontal para alinhamento */
+
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <title>Painel Administrativo</title>
+</head>
+
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="https://i.ibb.co/P6X6Hjk/1080x1080-02.png" id="user_avatar" alt="Avatar">
+
+                <p id="user_infos">
+                    <span class="item-description">
+                        Lidy Bijoux
+                    </span>
+                    <span class="item-description">
+                        Administrativo
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Usuários
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="cadastro_produtos.html">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Produtos
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-image"></i>
+                        <span class="item-description">
+                            Imagens
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- O modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Conteúdo do modal -->
+            <div class="modal-content">
+                <center><h2 class="modal-title">Visualizar o Evento</h2></center>
+                <table>
+                    <tr class="modal-tabela">
+                        <th class="col-sm-3">ID:</th>
+                        <th class="col-sm-3">Descrição:</th>
+                    </tr>
+                    <tr class="modal-tabela-evento">
+                        <td class="col-sm-9" style="text-align: center;" id="visualizar_id"></td>
+                        <td class="col-sm-9" style="text-align: center;" id="visualizar_titulo"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+        <section class="container">
+            <div class="vendas-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Vendas no Dia -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>R$ 1000</h3>
+                            <p>Vendas no Dia</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="vendas-ontem-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Vendas de Ontem -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>R$ 900</h3>
+                            <p>Vendas de Ontem</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-calendar-day"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dinheiro-caixa-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Dinheiro em Caixa -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>R$ 5000</h3>
+                            <p>Dinheiro em Caixa</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="itens-loja-row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <!-- Itens da Loja -->
+                    <div class="small-box bg-success">
+                        <div class="inner">
+                            <h3>100</h3>
+                            <p>Itens da Loja</p>
+                        </div>
+                        <div class="icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard -->
+            <div id="dashboard" class="dashboard">
+                <h2>Vendas no Ano</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Gráfico de Vendas -->
+                        <canvas id="salesChart"></canvas>
+                    </div>
+                    <div class="col-lg-6">
+                        <!-- Métricas Adicionais -->
+                        <div class="metric">
+                            <h3>Total de Clientes</h3>
+                            <p>1000</p>
+                        </div>
+                        <div class="metric">
+                            <h3>Total de Pedidos</h3>
+                            <p>500</p>
+                        </div>
+                        <!-- Adicione mais métricas conforme necessário -->
+                    </div>
+                </div>
+            </div>
+            <div class="calendar">
+                <div class="row">
+                    <div id='calendar'></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../public/calendar/dist/index.global.min.js"></script>
+    <script src="../public/calendar/packages/core/locales-all.global.min.js"></script>
+    <script src="../public/calendar/dist/custom.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Função para abrir o modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        // Função para fechar o modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Fechar o modal quando o usuário clicar fora dele
+        window.onclick = function (event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        // Código JavaScript para inicializar e preencher o gráfico de vendas
+        var ctx = document.getElementById('salesChart').getContext('2d');
+        var salesChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+                datasets: [{
+                    label: 'Vendas',
+                    data: [100, 200, 300, 400, 500, 600],
+                    backgroundColor: '#ddd',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
